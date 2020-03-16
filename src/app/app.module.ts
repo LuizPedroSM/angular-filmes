@@ -13,9 +13,10 @@ import { RodapeComponent } from "./shared/components/rodape/rodape.component";
 
 import { FilmesModule } from "./filmes/filmes.module";
 import { HttpClientModule } from "@angular/common/http";
+import { AlertaComponent } from "./shared/components/alerta/alerta.component";
 
 @NgModule({
-  declarations: [AppComponent, TopoComponent, RodapeComponent],
+  declarations: [AppComponent, TopoComponent, RodapeComponent, AlertaComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -25,6 +26,7 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     FilmesModule
   ],
+  entryComponents: [AlertaComponent],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: "pt" }],
   bootstrap: [AppComponent]
 })

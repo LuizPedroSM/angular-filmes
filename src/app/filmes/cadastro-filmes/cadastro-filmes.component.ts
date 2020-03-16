@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ValidarCamposService } from "src/app/shared/components/campos/validar-campos.service";
 import { Filme } from "src/app/shared/models/filme";
 import { FilmesService } from "src/app/core/filmes.service";
+import { MatDialog } from "@angular/material/dialog";
+import { AlertaComponent } from "src/app/shared/components/alerta/alerta.component";
 
 @Component({
   selector: "dio-cadastro-filmes",
@@ -15,6 +17,7 @@ export class CadastroFilmesComponent implements OnInit {
 
   constructor(
     public validacao: ValidarCamposService,
+    public dialog: MatDialog,
     private fb: FormBuilder,
     private filmeService: FilmesService
   ) {}
@@ -68,7 +71,7 @@ export class CadastroFilmesComponent implements OnInit {
   private salvar(filme: Filme): void {
     this.filmeService.salvar(filme).subscribe(
       () => {
-        alert("SUCESSO");
+        const dialogRef = this.dialog.open(AlertaComponent);
       },
       () => {
         alert("ERRO AO SALVAR");
