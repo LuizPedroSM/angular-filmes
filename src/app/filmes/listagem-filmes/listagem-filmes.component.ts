@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { debounceTime } from "rxjs/operators";
 import { FilmesService } from "src/app/core/filmes.service";
 import { Filme } from "src/app/shared/models/filme";
-import { FormGroup, FormBuilder } from "@angular/forms";
 import { ConfigParams } from "src/app/shared/models/config-params";
 
 @Component({
@@ -10,6 +11,8 @@ import { ConfigParams } from "src/app/shared/models/config-params";
   styleUrls: ["./listagem-filmes.component.scss"]
 })
 export class ListagemFilmesComponent implements OnInit {
+  readonly semFoto = "../../../assets/images/angular-material-post.png";
+
   config: ConfigParams = {
     pagina: 0,
     limite: 4
@@ -37,10 +40,13 @@ export class ListagemFilmesComponent implements OnInit {
       "Terror"
     ];
 
-    this.filtrosListagem.get("texto").valueChanges.subscribe((val: string) => {
-      this.config.pesquisa = val;
-      this.resetarConsulta();
-    });
+    this.filtrosListagem
+      .get("texto")
+      .valueChanges.pipe(debounceTime(500))
+      .subscribe((val: string) => {
+        this.config.pesquisa = val;
+        this.resetarConsulta();
+      });
 
     this.filtrosListagem.get("genero").valueChanges.subscribe((val: string) => {
       this.config.campo = { tipo: "genero", valor: val };
