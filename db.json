@@ -109,16 +109,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura",
       "id": 11
-    },
-    {
-      "titulo": "Teste",
-      "urlFoto": "",
-      "dtLancamento": "2020-03-17T03:00:00.000Z",
-      "descricao": "teste\nteste1\nteste2\nteste3",
-      "nota": 10,
-      "urlIMDb": "",
-      "genero": "Terror",
-      "id": 12
     }
   ]
 }
