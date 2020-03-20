@@ -1,3 +1,43 @@
+<h2 align="center">
+  Angular-Filmes
+</h2>
+
+# 💻 Angular-Filmes
+> Projeto feito no bootcamp da Digital Innovation One.
+
+## 📷 Imagens
+
+> Lista
+
+<p align="center"> 
+    <img alt="Frontend" src=".github/lista.png" width="100%">
+</p>
+
+> Pesquisa
+
+<p align="center"> 
+    <img alt="Frontend" src=".github/pesquisa.png" width="100%">
+</p>
+
+> Filme
+
+<p align="center"> 
+    <img alt="Frontend" src=".github/filme.png" width="100%">
+</p>
+
+> Cadastro
+
+<p align="center"> 
+    <img alt="Frontend" src=".github/cadastro.png" width="100%">
+</p>
+
+
+
+# Repositório principal
+
+https://github.com/RenanRB/curso-angular
+
+
 # Curso Intermediário de Angular - Digital Innovation One
 
 Esse curso foi feito para a plataforma [Digital Innovation One](https://digitalinnovation.one/)
